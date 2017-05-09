@@ -189,8 +189,17 @@ public class SingleLinkedListIntType
     		
     		if(startNode!=null && startNode.getData()>targetValue)
     		{
-    			startNode=null;
-    			singleLinkedListsize--;
+    			
+    			if(startNode.getLink()!=null)
+    			{
+    				startNode = startNode.getLink();
+    			}
+    			else
+    			{
+    				startNode=null;
+    				singleLinkedListsize--;
+    			}	
+    			
     		}
     	    
     	}
@@ -199,7 +208,7 @@ public class SingleLinkedListIntType
     /**
      * display elements of a single linked list
      */
-    public void display()
+   public void display()
     {
          System.out.println(" displaying elements of a single linked list ");     
         if (startNode==null || singleLinkedListsize == 0) 
@@ -228,7 +237,6 @@ public class SingleLinkedListIntType
         
         System.out.print(node.getData()+ "\n");
     }
-	
 	
 	public static void main(String[] args) 
 	{
